@@ -1,0 +1,714 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA41F1132C59259E00A0B643 /* FeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41F1122C59259E00A0B643 /* FeaturedView.swift */; };
+		FA41F1152C5925D200A0B643 /* SourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41F1142C5925D200A0B643 /* SourcesView.swift */; };
+		FA41F1172C5925F300A0B643 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41F1162C5925F300A0B643 /* SearchView.swift */; };
+		FA41F1192C59260A00A0B643 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41F1182C59260A00A0B643 /* SettingsView.swift */; };
+		FA41F11E2C59288000A0B643 /* SourcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41F11D2C59288000A0B643 /* SourcesViewModel.swift */; };
+		FA41F1202C5930DE00A0B643 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41F11F2C5930DE00A0B643 /* Models.swift */; };
+		FA67AB672C596CEA005FF38D /* CustomVisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67AB662C596CEA005FF38D /* CustomVisualEffectBlur.swift */; };
+		FA67AB6A2C598B6E005FF38D /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67AB692C598B6E005FF38D /* DownloadManager.swift */; };
+		FA67AB6C2C598C81005FF38D /* InstallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67AB6B2C598C81005FF38D /* InstallManager.swift */; };
+		FA67AB6E2C598CB5005FF38D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67AB6D2C598CB5005FF38D /* Extensions.swift */; };
+		FA67AB722C598E44005FF38D /* TSUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67AB712C598E44005FF38D /* TSUtil.m */; };
+		FA7B82982C5AC0AE002F0D07 /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B82972C5AC0AE002F0D07 /* QueueManager.swift */; };
+		FA7B829A2C5AC17F002F0D07 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B82992C5AC17F002F0D07 /* AlertManager.swift */; };
+		FAA582282C5AE8A8002DB02E /* CustomAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA582272C5AE8A8002DB02E /* CustomAsyncImage.swift */; };
+		FACEA1392C5882B700CE1F07 /* TrollAppsTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEA1382C5882B700CE1F07 /* TrollAppsTVApp.swift */; };
+		FACEA13B2C5882B700CE1F07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEA13A2C5882B700CE1F07 /* ContentView.swift */; };
+		FACEA13D2C5882B800CE1F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACEA13C2C5882B800CE1F07 /* Assets.xcassets */; };
+		FACEA1402C5882B800CE1F07 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACEA13F2C5882B800CE1F07 /* Preview Assets.xcassets */; };
+		FACEA14A2C5882B800CE1F07 /* TrollAppsTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEA1492C5882B800CE1F07 /* TrollAppsTVTests.swift */; };
+		FACEA1542C5882B800CE1F07 /* TrollAppsTVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEA1532C5882B800CE1F07 /* TrollAppsTVUITests.swift */; };
+		FACEA1562C5882B800CE1F07 /* TrollAppsTVUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEA1552C5882B800CE1F07 /* TrollAppsTVUITestsLaunchTests.swift */; };
+		FAF2FDCE2C5939950088DB92 /* RepositoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2FDCD2C5939950088DB92 /* RepositoryDetailView.swift */; };
+		FAF2FDD02C593A730088DB92 /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2FDCF2C593A730088DB92 /* AppDetailView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FACEA1462C5882B800CE1F07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FACEA12D2C5882B700CE1F07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FACEA1342C5882B700CE1F07;
+			remoteInfo = TrollAppsTV;
+		};
+		FACEA1502C5882B800CE1F07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FACEA12D2C5882B700CE1F07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FACEA1342C5882B700CE1F07;
+			remoteInfo = TrollAppsTV;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA41F1122C59259E00A0B643 /* FeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedView.swift; sourceTree = "<group>"; };
+		FA41F1142C5925D200A0B643 /* SourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesView.swift; sourceTree = "<group>"; };
+		FA41F1162C5925F300A0B643 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		FA41F1182C59260A00A0B643 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FA41F11D2C59288000A0B643 /* SourcesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesViewModel.swift; sourceTree = "<group>"; };
+		FA41F11F2C5930DE00A0B643 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		FA67AB662C596CEA005FF38D /* CustomVisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVisualEffectBlur.swift; sourceTree = "<group>"; };
+		FA67AB692C598B6E005FF38D /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		FA67AB6B2C598C81005FF38D /* InstallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallManager.swift; sourceTree = "<group>"; };
+		FA67AB6D2C598CB5005FF38D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FA67AB702C598E43005FF38D /* TrollAppsTV-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrollAppsTV-Bridging-Header.h"; sourceTree = "<group>"; };
+		FA67AB712C598E44005FF38D /* TSUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSUtil.m; sourceTree = "<group>"; };
+		FA7B82972C5AC0AE002F0D07 /* QueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
+		FA7B82992C5AC17F002F0D07 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		FAA582272C5AE8A8002DB02E /* CustomAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAsyncImage.swift; sourceTree = "<group>"; };
+		FACEA1352C5882B700CE1F07 /* TrollAppsTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrollAppsTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACEA1382C5882B700CE1F07 /* TrollAppsTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrollAppsTVApp.swift; sourceTree = "<group>"; };
+		FACEA13A2C5882B700CE1F07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FACEA13C2C5882B800CE1F07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FACEA13F2C5882B800CE1F07 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FACEA1452C5882B800CE1F07 /* TrollAppsTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrollAppsTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACEA1492C5882B800CE1F07 /* TrollAppsTVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrollAppsTVTests.swift; sourceTree = "<group>"; };
+		FACEA14F2C5882B800CE1F07 /* TrollAppsTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrollAppsTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACEA1532C5882B800CE1F07 /* TrollAppsTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrollAppsTVUITests.swift; sourceTree = "<group>"; };
+		FACEA1552C5882B800CE1F07 /* TrollAppsTVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrollAppsTVUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FAF2FDCD2C5939950088DB92 /* RepositoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailView.swift; sourceTree = "<group>"; };
+		FAF2FDCF2C593A730088DB92 /* AppDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FACEA1322C5882B700CE1F07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACEA1422C5882B800CE1F07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACEA14C2C5882B800CE1F07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA41F1112C59257900A0B643 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA67AB652C596CCB005FF38D /* Custom */,
+				FAF2FDCC2C5939870088DB92 /* DetailViews */,
+				FA41F1122C59259E00A0B643 /* FeaturedView.swift */,
+				FA41F1142C5925D200A0B643 /* SourcesView.swift */,
+				FA41F1162C5925F300A0B643 /* SearchView.swift */,
+				FA41F1182C59260A00A0B643 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA41F11C2C59286200A0B643 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA41F11D2C59288000A0B643 /* SourcesViewModel.swift */,
+				FA41F11F2C5930DE00A0B643 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA67AB652C596CCB005FF38D /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				FA67AB662C596CEA005FF38D /* CustomVisualEffectBlur.swift */,
+				FAA582272C5AE8A8002DB02E /* CustomAsyncImage.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		FA67AB682C598B52005FF38D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FA67AB692C598B6E005FF38D /* DownloadManager.swift */,
+				FA67AB6B2C598C81005FF38D /* InstallManager.swift */,
+				FA7B82972C5AC0AE002F0D07 /* QueueManager.swift */,
+				FA7B82992C5AC17F002F0D07 /* AlertManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		FA67AB6F2C598DE4005FF38D /* Objective C */ = {
+			isa = PBXGroup;
+			children = (
+				FA67AB712C598E44005FF38D /* TSUtil.m */,
+				FA67AB702C598E43005FF38D /* TrollAppsTV-Bridging-Header.h */,
+			);
+			path = "Objective C";
+			sourceTree = "<group>";
+		};
+		FACEA12C2C5882B700CE1F07 = {
+			isa = PBXGroup;
+			children = (
+				FACEA1372C5882B700CE1F07 /* TrollAppsTV */,
+				FACEA1482C5882B800CE1F07 /* TrollAppsTVTests */,
+				FACEA1522C5882B800CE1F07 /* TrollAppsTVUITests */,
+				FACEA1362C5882B700CE1F07 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FACEA1362C5882B700CE1F07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FACEA1352C5882B700CE1F07 /* TrollAppsTV.app */,
+				FACEA1452C5882B800CE1F07 /* TrollAppsTVTests.xctest */,
+				FACEA14F2C5882B800CE1F07 /* TrollAppsTVUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FACEA1372C5882B700CE1F07 /* TrollAppsTV */ = {
+			isa = PBXGroup;
+			children = (
+				FA67AB6F2C598DE4005FF38D /* Objective C */,
+				FA67AB682C598B52005FF38D /* Managers */,
+				FA41F11C2C59286200A0B643 /* Models */,
+				FA41F1112C59257900A0B643 /* Views */,
+				FACEA1382C5882B700CE1F07 /* TrollAppsTVApp.swift */,
+				FACEA13A2C5882B700CE1F07 /* ContentView.swift */,
+				FACEA13C2C5882B800CE1F07 /* Assets.xcassets */,
+				FACEA13E2C5882B800CE1F07 /* Preview Content */,
+				FA67AB6D2C598CB5005FF38D /* Extensions.swift */,
+			);
+			path = TrollAppsTV;
+			sourceTree = "<group>";
+		};
+		FACEA13E2C5882B800CE1F07 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FACEA13F2C5882B800CE1F07 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FACEA1482C5882B800CE1F07 /* TrollAppsTVTests */ = {
+			isa = PBXGroup;
+			children = (
+				FACEA1492C5882B800CE1F07 /* TrollAppsTVTests.swift */,
+			);
+			path = TrollAppsTVTests;
+			sourceTree = "<group>";
+		};
+		FACEA1522C5882B800CE1F07 /* TrollAppsTVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FACEA1532C5882B800CE1F07 /* TrollAppsTVUITests.swift */,
+				FACEA1552C5882B800CE1F07 /* TrollAppsTVUITestsLaunchTests.swift */,
+			);
+			path = TrollAppsTVUITests;
+			sourceTree = "<group>";
+		};
+		FAF2FDCC2C5939870088DB92 /* DetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				FAF2FDCD2C5939950088DB92 /* RepositoryDetailView.swift */,
+				FAF2FDCF2C593A730088DB92 /* AppDetailView.swift */,
+			);
+			path = DetailViews;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FACEA1342C5882B700CE1F07 /* TrollAppsTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FACEA1592C5882B800CE1F07 /* Build configuration list for PBXNativeTarget "TrollAppsTV" */;
+			buildPhases = (
+				FACEA1312C5882B700CE1F07 /* Sources */,
+				FACEA1322C5882B700CE1F07 /* Frameworks */,
+				FACEA1332C5882B700CE1F07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrollAppsTV;
+			productName = TrollAppsTV;
+			productReference = FACEA1352C5882B700CE1F07 /* TrollAppsTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FACEA1442C5882B800CE1F07 /* TrollAppsTVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FACEA15C2C5882B800CE1F07 /* Build configuration list for PBXNativeTarget "TrollAppsTVTests" */;
+			buildPhases = (
+				FACEA1412C5882B800CE1F07 /* Sources */,
+				FACEA1422C5882B800CE1F07 /* Frameworks */,
+				FACEA1432C5882B800CE1F07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FACEA1472C5882B800CE1F07 /* PBXTargetDependency */,
+			);
+			name = TrollAppsTVTests;
+			productName = TrollAppsTVTests;
+			productReference = FACEA1452C5882B800CE1F07 /* TrollAppsTVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FACEA14E2C5882B800CE1F07 /* TrollAppsTVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FACEA15F2C5882B800CE1F07 /* Build configuration list for PBXNativeTarget "TrollAppsTVUITests" */;
+			buildPhases = (
+				FACEA14B2C5882B800CE1F07 /* Sources */,
+				FACEA14C2C5882B800CE1F07 /* Frameworks */,
+				FACEA14D2C5882B800CE1F07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FACEA1512C5882B800CE1F07 /* PBXTargetDependency */,
+			);
+			name = TrollAppsTVUITests;
+			productName = TrollAppsTVUITests;
+			productReference = FACEA14F2C5882B800CE1F07 /* TrollAppsTVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FACEA12D2C5882B700CE1F07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					FACEA1342C5882B700CE1F07 = {
+						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
+					};
+					FACEA1442C5882B800CE1F07 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = FACEA1342C5882B700CE1F07;
+					};
+					FACEA14E2C5882B800CE1F07 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = FACEA1342C5882B700CE1F07;
+					};
+				};
+			};
+			buildConfigurationList = FACEA1302C5882B700CE1F07 /* Build configuration list for PBXProject "TrollAppsTV" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FACEA12C2C5882B700CE1F07;
+			productRefGroup = FACEA1362C5882B700CE1F07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FACEA1342C5882B700CE1F07 /* TrollAppsTV */,
+				FACEA1442C5882B800CE1F07 /* TrollAppsTVTests */,
+				FACEA14E2C5882B800CE1F07 /* TrollAppsTVUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FACEA1332C5882B700CE1F07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACEA1402C5882B800CE1F07 /* Preview Assets.xcassets in Resources */,
+				FACEA13D2C5882B800CE1F07 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACEA1432C5882B800CE1F07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACEA14D2C5882B800CE1F07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FACEA1312C5882B700CE1F07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA41F1172C5925F300A0B643 /* SearchView.swift in Sources */,
+				FA7B829A2C5AC17F002F0D07 /* AlertManager.swift in Sources */,
+				FA41F11E2C59288000A0B643 /* SourcesViewModel.swift in Sources */,
+				FACEA13B2C5882B700CE1F07 /* ContentView.swift in Sources */,
+				FA41F1202C5930DE00A0B643 /* Models.swift in Sources */,
+				FA41F1132C59259E00A0B643 /* FeaturedView.swift in Sources */,
+				FA67AB722C598E44005FF38D /* TSUtil.m in Sources */,
+				FA41F1192C59260A00A0B643 /* SettingsView.swift in Sources */,
+				FA67AB672C596CEA005FF38D /* CustomVisualEffectBlur.swift in Sources */,
+				FAA582282C5AE8A8002DB02E /* CustomAsyncImage.swift in Sources */,
+				FA67AB6A2C598B6E005FF38D /* DownloadManager.swift in Sources */,
+				FA67AB6C2C598C81005FF38D /* InstallManager.swift in Sources */,
+				FAF2FDCE2C5939950088DB92 /* RepositoryDetailView.swift in Sources */,
+				FAF2FDD02C593A730088DB92 /* AppDetailView.swift in Sources */,
+				FACEA1392C5882B700CE1F07 /* TrollAppsTVApp.swift in Sources */,
+				FA7B82982C5AC0AE002F0D07 /* QueueManager.swift in Sources */,
+				FA41F1152C5925D200A0B643 /* SourcesView.swift in Sources */,
+				FA67AB6E2C598CB5005FF38D /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACEA1412C5882B800CE1F07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACEA14A2C5882B800CE1F07 /* TrollAppsTVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACEA14B2C5882B800CE1F07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACEA1562C5882B800CE1F07 /* TrollAppsTVUITestsLaunchTests.swift in Sources */,
+				FACEA1542C5882B800CE1F07 /* TrollAppsTVUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FACEA1472C5882B800CE1F07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FACEA1342C5882B700CE1F07 /* TrollAppsTV */;
+			targetProxy = FACEA1462C5882B800CE1F07 /* PBXContainerItemProxy */;
+		};
+		FACEA1512C5882B800CE1F07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FACEA1342C5882B700CE1F07 /* TrollAppsTV */;
+			targetProxy = FACEA1502C5882B800CE1F07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FACEA1572C5882B800CE1F07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+			};
+			name = Debug;
+		};
+		FACEA1582C5882B800CE1F07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FACEA15A2C5882B800CE1F07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TrollAppsTV/Preview Content\"";
+				DEVELOPMENT_TEAM = AKUATGSFRT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TrollApps;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.resonance.tvstore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TrollAppsTV/Objective C/TrollAppsTV-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+			};
+			name = Debug;
+		};
+		FACEA15B2C5882B800CE1F07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TrollAppsTV/Preview Content\"";
+				DEVELOPMENT_TEAM = AKUATGSFRT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TrollApps;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.resonance.tvstore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TrollAppsTV/Objective C/TrollAppsTV-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+			};
+			name = Release;
+		};
+		FACEA15D2C5882B800CE1F07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.resonance.TrollAppsTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrollAppsTV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrollAppsTV";
+				TVOS_DEPLOYMENT_TARGET = 17.5;
+			};
+			name = Debug;
+		};
+		FACEA15E2C5882B800CE1F07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.resonance.TrollAppsTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrollAppsTV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrollAppsTV";
+				TVOS_DEPLOYMENT_TARGET = 17.5;
+			};
+			name = Release;
+		};
+		FACEA1602C5882B800CE1F07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.resonance.TrollAppsTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = TrollAppsTV;
+			};
+			name = Debug;
+		};
+		FACEA1612C5882B800CE1F07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.resonance.TrollAppsTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = TrollAppsTV;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FACEA1302C5882B700CE1F07 /* Build configuration list for PBXProject "TrollAppsTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACEA1572C5882B800CE1F07 /* Debug */,
+				FACEA1582C5882B800CE1F07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FACEA1592C5882B800CE1F07 /* Build configuration list for PBXNativeTarget "TrollAppsTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACEA15A2C5882B800CE1F07 /* Debug */,
+				FACEA15B2C5882B800CE1F07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FACEA15C2C5882B800CE1F07 /* Build configuration list for PBXNativeTarget "TrollAppsTVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACEA15D2C5882B800CE1F07 /* Debug */,
+				FACEA15E2C5882B800CE1F07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FACEA15F2C5882B800CE1F07 /* Build configuration list for PBXNativeTarget "TrollAppsTVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACEA1602C5882B800CE1F07 /* Debug */,
+				FACEA1612C5882B800CE1F07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FACEA12D2C5882B700CE1F07 /* Project object */;
+}

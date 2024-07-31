@@ -1,0 +1,18 @@
+{
+  "images" : [
+    {
+      "filename" : "TrollAppsTVIcon_MG_1x.png",
+      "idiom" : "tv",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "TrollAppsTVIcon_MG_2x.png",
+      "idiom" : "tv",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

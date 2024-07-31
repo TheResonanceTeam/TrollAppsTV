@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "TrollAppsTVIcon_BG_AppStore.png",
+      "idiom" : "tv"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
