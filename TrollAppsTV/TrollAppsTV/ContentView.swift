@@ -10,10 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            FeaturedView()
-                .tabItem {
-                    Label("Featured", systemImage: "star.fill")
-                }
+            //FeaturedView()
+            //    .tabItem {
+            //        Label("Featured", systemImage: "star.fill")
+            //   }
             SourcesView()
                 .tabItem {
                     Label("Sources", systemImage: "globe")
@@ -22,7 +22,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
-            SettingsView()
+            SettingsView(viewModel: SourcesViewModel())
                 .tabItem {
                     Label("Settings", systemImage: "gearshape.fill")
                 }

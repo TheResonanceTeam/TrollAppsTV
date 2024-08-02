@@ -6,6 +6,7 @@
 #import <UIKit/UIKit.h>
 
 extern int spawnRoot(NSString* path, NSArray* args);
+extern bool openApplicationWithBundleID(NSString* appId);
 
 @class BSMonotonicReferenceTime, NSArray, NSNumber, NSString, NSURL, SBSApplicationShortcutService, SBSApplicationShortcutServiceFetchResult;
 @interface SBFApplication : NSObject {
@@ -19,24 +20,24 @@ extern int spawnRoot(NSString* path, NSArray* args);
 - (id)initWithApplicationBundleIdentifier:(id)arg1;
 @end
 
-@interface
+/*@interface
  LSApplicationWorkspace : NSObject
 - (id)allInstalledApplications;
 - (BOOL)unregisterApplication:(NSURL *)url;
 - (BOOL)registerApplication:(NSURL *)url;
-@end
+@end*/
 
 
-@interface
+/*@interface
  LSBundleProxy
 @property
 (readonly, nonatomic) NSURL *bundleURL;
-@end
+@end*/
 
 
-@interface
+/*@interface
  LSApplicationProxy : LSBundleProxy
-@end
+@end*/
 
 @interface UIImage (Private)
 +(id)_applicationIconImageForBundleIdentifier:(id)arg0 format:(int)arg1 scale:(CGFloat)arg2;

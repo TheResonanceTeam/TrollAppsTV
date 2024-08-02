@@ -20,7 +20,10 @@
 		FA67AB722C598E44005FF38D /* TSUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67AB712C598E44005FF38D /* TSUtil.m */; };
 		FA7B82982C5AC0AE002F0D07 /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B82972C5AC0AE002F0D07 /* QueueManager.swift */; };
 		FA7B829A2C5AC17F002F0D07 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B82992C5AC17F002F0D07 /* AlertManager.swift */; };
+		FA7D958A2C5B37B900D380FE /* RepositoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D95892C5B37B900D380FE /* RepositoryManager.swift */; };
+		FA7D958D2C5B39E300D380FE /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D958C2C5B39E300D380FE /* AppUtil.swift */; };
 		FAA582282C5AE8A8002DB02E /* CustomAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA582272C5AE8A8002DB02E /* CustomAsyncImage.swift */; };
+		FABD8D1F2C5DA23800082E11 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABD8D1E2C5DA23800082E11 /* CoreServices.framework */; };
 		FACEA1392C5882B700CE1F07 /* TrollAppsTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEA1382C5882B700CE1F07 /* TrollAppsTVApp.swift */; };
 		FACEA13B2C5882B700CE1F07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEA13A2C5882B700CE1F07 /* ContentView.swift */; };
 		FACEA13D2C5882B800CE1F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACEA13C2C5882B800CE1F07 /* Assets.xcassets */; };
@@ -64,7 +67,11 @@
 		FA67AB712C598E44005FF38D /* TSUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSUtil.m; sourceTree = "<group>"; };
 		FA7B82972C5AC0AE002F0D07 /* QueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
 		FA7B82992C5AC17F002F0D07 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		FA7D95892C5B37B900D380FE /* RepositoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryManager.swift; sourceTree = "<group>"; };
+		FA7D958C2C5B39E300D380FE /* AppUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtil.swift; sourceTree = "<group>"; };
 		FAA582272C5AE8A8002DB02E /* CustomAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAsyncImage.swift; sourceTree = "<group>"; };
+		FABD8D1C2C5D5E3E00082E11 /* CoreServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreServices.h; sourceTree = "<group>"; };
+		FABD8D1E2C5DA23800082E11 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		FACEA1352C5882B700CE1F07 /* TrollAppsTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrollAppsTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACEA1382C5882B700CE1F07 /* TrollAppsTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrollAppsTVApp.swift; sourceTree = "<group>"; };
 		FACEA13A2C5882B700CE1F07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABD8D1F2C5DA23800082E11 /* CoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +150,7 @@
 				FA67AB6B2C598C81005FF38D /* InstallManager.swift */,
 				FA7B82972C5AC0AE002F0D07 /* QueueManager.swift */,
 				FA7B82992C5AC17F002F0D07 /* AlertManager.swift */,
+				FA7D95892C5B37B900D380FE /* RepositoryManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -151,8 +160,25 @@
 			children = (
 				FA67AB712C598E44005FF38D /* TSUtil.m */,
 				FA67AB702C598E43005FF38D /* TrollAppsTV-Bridging-Header.h */,
+				FABD8D1C2C5D5E3E00082E11 /* CoreServices.h */,
 			);
 			path = "Objective C";
+			sourceTree = "<group>";
+		};
+		FA7D958B2C5B39D600D380FE /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FA7D958C2C5B39E300D380FE /* AppUtil.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		FABD8D1D2C5DA23800082E11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FABD8D1E2C5DA23800082E11 /* CoreServices.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FACEA12C2C5882B700CE1F07 = {
@@ -162,6 +188,7 @@
 				FACEA1482C5882B800CE1F07 /* TrollAppsTVTests */,
 				FACEA1522C5882B800CE1F07 /* TrollAppsTVUITests */,
 				FACEA1362C5882B700CE1F07 /* Products */,
+				FABD8D1D2C5DA23800082E11 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,6 +205,7 @@
 		FACEA1372C5882B700CE1F07 /* TrollAppsTV */ = {
 			isa = PBXGroup;
 			children = (
+				FA7D958B2C5B39D600D380FE /* Util */,
 				FA67AB6F2C598DE4005FF38D /* Objective C */,
 				FA67AB682C598B52005FF38D /* Managers */,
 				FA41F11C2C59286200A0B643 /* Models */,
@@ -365,6 +393,8 @@
 				FA67AB722C598E44005FF38D /* TSUtil.m in Sources */,
 				FA41F1192C59260A00A0B643 /* SettingsView.swift in Sources */,
 				FA67AB672C596CEA005FF38D /* CustomVisualEffectBlur.swift in Sources */,
+				FA7D958D2C5B39E300D380FE /* AppUtil.swift in Sources */,
+				FA7D958A2C5B37B900D380FE /* RepositoryManager.swift in Sources */,
 				FAA582282C5AE8A8002DB02E /* CustomAsyncImage.swift in Sources */,
 				FA67AB6A2C598B6E005FF38D /* DownloadManager.swift in Sources */,
 				FA67AB6C2C598C81005FF38D /* InstallManager.swift in Sources */,
@@ -551,6 +581,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TrollAppsTV",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.resonance.tvstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -584,6 +618,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TrollAppsTV",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.resonance.tvstore;

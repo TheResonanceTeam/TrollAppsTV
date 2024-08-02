@@ -18,27 +18,30 @@ struct RepositoryDetailView: View {
                         NavigationLink(destination: AppDetailView(app: app)) {
                             HStack(alignment: .center, spacing: 10) {
                                 // App Icon
+                                let width: CGFloat = 100 // Adjust this width to your desired value
+                                let height = width * (768 / 1280) // Calculating height to maintain the 5:3 aspect ratio
+
                                 if #available(tvOS 15.0, *) {
                                     AsyncImage(url: URL(string: app.iconURL)) { image in
                                         image
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: 50, height: 50)
-                                            .clipShape(Circle())
+                                            .frame(width: width, height: height)
+                                            .clipShape(RoundedRectangle(cornerRadius: 16))
                                     } placeholder: {
                                         ProgressView()
-                                            .frame(width: 50, height: 50)
+                                            .frame(width: width, height: height)
                                     }
                                 } else {
                                     CustomAsyncImage(url: URL(string: app.iconURL)!) { image in
                                         image
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: 50, height: 50)
-                                            .clipShape(Circle())
+                                            .frame(width: width, height: height)
+                                            .clipShape(RoundedRectangle(cornerRadius: 16))
                                     } placeholder: {
                                         ProgressView()
-                                            .frame(width: 50, height: 50)
+                                            .frame(width: width, height: height)
                                     }
                                 }
                                 

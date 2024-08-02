@@ -8,12 +8,18 @@
 #import <Foundation/Foundation.h>
 #import <spawn.h>
 #import "TrollAppsTV-Bridging-Header.h"
+#import "CoreServices.h"
 
 
 #define POSIX_SPAWN_PERSONA_FLAGS_OVERRIDE 1
 extern int posix_spawnattr_set_persona_np(const posix_spawnattr_t* __restrict, uid_t, uint32_t);
 extern int posix_spawnattr_set_persona_uid_np(const posix_spawnattr_t* __restrict, uid_t);
 extern int posix_spawnattr_set_persona_gid_np(const posix_spawnattr_t* __restrict, uid_t);
+
+bool openApplicationWithBundleID(NSString* appId)
+{
+    return [[LSApplicationWorkspace defaultWorkspace] openApplicationWithBundleID:appId];
+}
 
 int spawnRoot(NSString* path, NSArray* args)
 {

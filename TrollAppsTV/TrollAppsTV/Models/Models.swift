@@ -17,11 +17,11 @@ struct AppVersion: Identifiable, Codable {
     let size: Int
 }
 
-// Model for an app
 struct App: Identifiable, Codable {
     let id = UUID()
     let name: String
     let bundleIdentifier: String
+    let bundleName: String
     let developerName: String
     let subtitle: String
     let localizedDescription: String
@@ -44,11 +44,10 @@ struct Repository: Identifiable, Codable {
     let website: String
     let tintColor: String
     let featuredApps: [String]
-    let apps: [App]
+    let apps: [TrollAppsTV.App]
     let news: [String]
 }
 
-// Model for a source URL
 struct Source: Identifiable, Codable {
     let id = UUID()
     let url: String

@@ -14,16 +14,30 @@ class SourcesViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init() {
-        // Initialize with an existing URL for testing
-        let testURL = "https://raw.githubusercontent.com/Bonnie39/trollappstv.testrepo/main/repo.json"
-        sources.append(Source(url: testURL))
-        fetchRepository(from: testURL)
+        setDefaultSources()
+    }
+    
+    func setDefaultSources() {
+        let demoURL1 = "https://raw.githubusercontent.com/TheResonanceTeam/.default-sources/main/tvOS/ResonanceTeamTV.json"
+        let demoURL2 = "https://raw.githubusercontent.com/TheResonanceTeam/.default-sources/main/tvOS/UnofficialMojangArchive.json"
+        
+        sources.append(Source(url: demoURL1))
+        sources.append(Source(url: demoURL2))
+        
+        fetchRepository(from: demoURL1)
+        fetchRepository(from: demoURL2)
     }
 
     func addSource(url: String) {
         let newSource = Source(url: url)
         sources.append(newSource)
         fetchRepository(from: url)
+    }
+    
+    func removeSource(at index: Int) {
+        guard index < sources.count else { return }
+        sources.remove(at: index)
+        repositories.remove(at: index)
     }
 
     func fetchRepository(from urlString: String) {

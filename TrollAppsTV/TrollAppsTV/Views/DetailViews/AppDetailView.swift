@@ -10,18 +10,19 @@ import SwiftUI
 struct AppDetailView: View {
     let app: App
     @State private var isOwned: Bool = false // State to manage "GET" button text
-
+    @State private var showingAlert = false
+    @State private var downloadAlertMessage: String = ""
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                // Header Image Section
                 ZStack(alignment: .bottom) {
                     if #available(tvOS 15.0, *) {
                         AsyncImage(url: URL(string: app.headerURL)) { image in
                             image
                                 .resizable()
                                 .scaledToFill()
-                                .frame(height: 620) // Adjust the height as needed
+                                .frame(height: 620)
                                 .clipped()
                         } placeholder: {
                             ProgressView()
@@ -32,7 +33,7 @@ struct AppDetailView: View {
                             image
                                 .resizable()
                                 .scaledToFill()
-                                .frame(height: 620) // Adjust the height as needed
+                                .frame(height: 620)
                                 .clipped()
                         } placeholder: {
                             ProgressView()
@@ -53,21 +54,57 @@ struct AppDetailView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .padding(.leading)
-                        .padding(.top, 10) // Ensure there's some top padding
+                        .padding(.top, 10)
 
                     HStack(alignment: .top) {
-                        Button(action: {
-                            isOwned.toggle()
-                        }) {
-                            Text(isOwned ? "OWNED" : "GET")
-                                .fontWeight(.bold)
-                                .padding()
-                                .frame(height: 44)
-                                .foregroundColor(.white)
-                                .cornerRadius(8)
+                        if(app.bundleName != "TrollAppsTV.app") {   //  app is NOT trollapps
+                            if(isAppInstalled(bundleName: app.bundleName)) {
+                                Button("OPEN") {
+                                    if(openApplicationWithBundleID(app.bundleIdentifier)) {
+                                        print("OPENING APP")
+                                    }
+                                }
+                            } else {
+                                if #available(tvOS 15.0, *) {
+                                    Button("GET") {
+                                        if let firstVersion = app.versions.first {
+                                            print("CALLING DOWNLOADIPA AND SHOWING INIT ALERT")
+                                            downloadIPA(firstVersion.downloadURL)
+                                            showingAlert = true
+                                        }
+                                    }
+                                    .alert("Started download:" + app.name, isPresented: $showingAlert) {
+                                        Button("OK", role: .cancel) { }
+                                    }
+                                    .padding(.leading)
+                                } else {
+                                    Button("GET") {
+                                        if let firstVersion = app.versions.first {
+                                            print("CALLING DOWNLOADIPA AND SHOWING INIT ALERT")
+                                            downloadIPA(firstVersion.downloadURL)
+                                            downloadAlertMessage = "Started download: " + app.name
+                                            showingAlert = true
+                                        }
+                                    }
+                                    .alert(isPresented: $showingAlert) {
+                                        Alert(
+                                            title: Text(downloadAlertMessage),
+                                            message: Text("Please wait...")
+                                        )
+                                    }
+                                }
+                            }
+                        } else {    //  app IS trollapps
+                            if(isNewVersionAvailable(for: app)) {
+                                Button("UPDATE") {
+                                    updateTrollApps(for: app)
+                                }
+                            } else {
+                                Button("OWNED") {}.disabled(true)
+                            }
                         }
-                        .padding(.leading)
-
+                        
+                        
                         VStack(alignment: .leading, spacing: 10) {
                             if #available(tvOS 15.0, *) {
                                 Text(app.localizedDescription)
@@ -92,9 +129,9 @@ struct AppDetailView: View {
                 .padding(.top, 10)
                 .padding(20)
             }
-            .padding(.bottom) // Ensure the scroll view's content doesn't get cut off
+            .padding(.bottom)
         }
-        .edgesIgnoringSafeArea(.all) // Ensure the scroll view content extends to the edges
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -135,26 +172,5 @@ struct ScreenshotCell: View {
                     .frame(width: 300, height: 200)
             }
         }
-    }
-}
-
-struct AppDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        AppDetailView(app: App(
-            name: "Sample App",
-            bundleIdentifier: "com.example.sample",
-            developerName: "Example Dev",
-            subtitle: "Sample App Subtitle",
-            localizedDescription: "This is a description of the Sample App.",
-            iconURL: "https://example.com/app-icon.png",
-            headerURL: "https://raw.githubusercontent.com/Bonnie39/trollappstv.testrepo/main/assets/com.mojang.minecraftappletv.keyart.png",
-            tintColor: "#FF0000",
-            screenshotURLs: [
-                "https://example.com/screenshot1.png",
-                "https://example.com/screenshot2.png"
-            ],
-            versions: [],
-            appPermissions: [:]
-        ))
     }
 }

@@ -9,6 +9,12 @@ import SwiftUI
 
 @main
 struct TrollAppsTVApp: SwiftUI.App {
+    
+    init() {
+        clearTrollAppsFolder()
+        findAndSetTrollAppsTVVersion(version: "0.8")
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
