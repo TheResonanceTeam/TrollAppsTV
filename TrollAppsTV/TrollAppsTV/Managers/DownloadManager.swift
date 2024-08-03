@@ -11,14 +11,16 @@ import SwiftUI
 class DownloadDelegate: NSObject, ObservableObject, URLSessionDownloadDelegate {
     //var queueItem: QueueItem
     var appUrl: String
+    var isTrollAppsUpdate: Bool
     //var completion: (FunctionStatus) -> Void
     //var queueManager: QueueManager
 
-    init(appUrl: String) {
+    init(appUrl: String, isTrollAppsUpdate: Bool) {
         //self.queueItem = queueItem
         //self.completion = completion
         //self.queueManager = queueManager
         self.appUrl = appUrl
+        self.isTrollAppsUpdate = isTrollAppsUpdate
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
@@ -35,7 +37,7 @@ class DownloadDelegate: NSObject, ObservableObject, URLSessionDownloadDelegate {
             
             print("ATTEMPTING TO INSTALL APP")
             
-            InstallIPA()
+            InstallIPA(isTrollAppsUpdate: isTrollAppsUpdate)
                         
             DispatchQueue.main.async {
                 //self.queueManager.updateQueueItemProgress(itemID: self.queueItem.id, progress: 100)
@@ -55,10 +57,10 @@ class DownloadDelegate: NSObject, ObservableObject, URLSessionDownloadDelegate {
     }
 }
 
-func downloadIPA(_ appUrl: String) {
+func downloadIPA(_ appUrl: String, isTrollAppsUpdate: Bool) {
     print("DOWNLOAD REQUEST STARTED")
 
-    let downloadDelegate = DownloadDelegate(appUrl: appUrl)
+    let downloadDelegate = DownloadDelegate(appUrl: appUrl, isTrollAppsUpdate: isTrollAppsUpdate)
 
     guard let url = URL(string: appUrl) else {
         //completion(FunctionStatus(error: true, message: ErrorMessage(title: "INVALID_DOWNLOAD_URL", body: "LIKELY_A_REPO_ISSUE")))

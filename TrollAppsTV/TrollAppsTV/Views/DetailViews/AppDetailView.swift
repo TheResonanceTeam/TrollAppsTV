@@ -69,7 +69,7 @@ struct AppDetailView: View {
                                     Button("GET") {
                                         if let firstVersion = app.versions.first {
                                             print("CALLING DOWNLOADIPA AND SHOWING INIT ALERT")
-                                            downloadIPA(firstVersion.downloadURL)
+                                            downloadIPA(firstVersion.downloadURL, isTrollAppsUpdate: false)
                                             showingAlert = true
                                         }
                                     }
@@ -81,7 +81,7 @@ struct AppDetailView: View {
                                     Button("GET") {
                                         if let firstVersion = app.versions.first {
                                             print("CALLING DOWNLOADIPA AND SHOWING INIT ALERT")
-                                            downloadIPA(firstVersion.downloadURL)
+                                            downloadIPA(firstVersion.downloadURL, isTrollAppsUpdate: false)
                                             downloadAlertMessage = "Started download: " + app.name
                                             showingAlert = true
                                         }
@@ -96,8 +96,33 @@ struct AppDetailView: View {
                             }
                         } else {    //  app IS trollapps
                             if(isNewVersionAvailable(for: app)) {
-                                Button("UPDATE") {
-                                    updateTrollApps(for: app)
+                                if #available(tvOS 15.0, *) {
+                                    Button("GET") {
+                                        if let firstVersion = app.versions.first {
+                                            print("CALLING DOWNLOADIPA AND SHOWING INIT ALERT")
+                                            downloadIPA(firstVersion.downloadURL, isTrollAppsUpdate: true)
+                                            showingAlert = true
+                                        }
+                                    }
+                                    .alert("Started download:" + app.name, isPresented: $showingAlert) {
+                                        Button("OK", role: .cancel) { }
+                                    }
+                                    .padding(.leading)
+                                } else {
+                                    Button("GET") {
+                                        if let firstVersion = app.versions.first {
+                                            print("CALLING DOWNLOADIPA AND SHOWING INIT ALERT")
+                                            downloadIPA(firstVersion.downloadURL, isTrollAppsUpdate: true)
+                                            downloadAlertMessage = "Started download: " + app.name
+                                            showingAlert = true
+                                        }
+                                    }
+                                    .alert(isPresented: $showingAlert) {
+                                        Alert(
+                                            title: Text(downloadAlertMessage),
+                                            message: Text("Please wait...")
+                                        )
+                                    }
                                 }
                             } else {
                                 Button("OWNED") {}.disabled(true)

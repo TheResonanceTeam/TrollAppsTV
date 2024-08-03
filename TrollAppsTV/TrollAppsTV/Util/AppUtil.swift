@@ -19,48 +19,6 @@ private func applicationIconImage() -> Int32 {
     return UIDevice.current.userInterfaceIdiom == .pad ? 8 : 10
 }
 
-/*func GetApps() -> [BundledApp] {
-    var apps: [BundledApp] = []
-    
-    for app in LSApplicationWorkspace().allInstalledApplications() as! [LSApplicationProxy] {
-        let appDict = NSDictionary(contentsOfFile: "\(app.bundleURL.path)/Info.plist")
-        
-        let parentDirectory = app.bundleURL.deletingLastPathComponent()
-        let filePath = parentDirectory.appendingPathComponent("_TrollStore")
-        let fileExists = FileManager.default.fileExists(atPath: filePath.path)
-        
-        let bundleID = (appDict?.value(forKey: "CFBundleIdentifier") ?? "Unknown") as! String
-        
-        
-        let icon = UIImage._applicationIconImage(forBundleIdentifier: bundleID, format: applicationIconImage(), scale: UIScreen.main.scale) as! UIImage
-        
-        
-        let bundledApp = BundledApp(
-            id: bundleID,
-            name: (
-                appDict?.value(forKey: "CFBundleDisplayName") ??
-                appDict?.value(forKey: "CFBundleName") ??
-                appDict?.value(forKey: "CFBundleExecutable") ??
-                "Unknown"
-            ) as! String,
-            version: (
-                appDict?.value(forKey: "CFBundleShortVersionString") ??
-                "Unknown"
-            ) as! String,
-            isTrollStore: fileExists,
-            icon: icon
-        )
-        apps.append(bundledApp)
-    }
-    return apps
-}
-
-func OpenApp(_ BundleID: String) {
-    guard let obj = objc_getClass("LSApplicationWorkspace") as? NSObject else { return }
-    let workspace = obj.perform(Selector(("defaultWorkspace")))?.takeUnretainedValue() as? NSObject
-    workspace?.perform(Selector(("openApplicationWithBundleID:")), with: BundleID)
-}*/
-
 func clearTrollAppsFolder() {
     let trollAppsFolderURL = URL(fileURLWithPath: "/private/var/mobile/.TrollApps/")
     let tempIpaFileURL = URL(fileURLWithPath: "/private/var/mobile/.TrollApps/tmp.install.ipa")
@@ -198,5 +156,68 @@ func updateTrollApps(for app: TrollAppsTV.App) {
         })
     } else {
         print("Failed to create URL or cannot open URL.")
+    }
+}
+
+func closeTrollApps() {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+            exit(0)
+        }
+    })
+}
+
+func createDefaultSourcesFile() {
+    let fileManager = FileManager.default
+    let trollAppsDirectory = "/private/var/mobile/.TrollApps/"
+    let filePath = trollAppsDirectory + ".defaultsources"
+
+    // Check if the directory exists
+    if !fileManager.fileExists(atPath: trollAppsDirectory) {
+        do {
+            try fileManager.createDirectory(atPath: trollAppsDirectory, withIntermediateDirectories: true, attributes: nil)
+            print("Successfully created directory: \(trollAppsDirectory)")
+        } catch {
+            print("Error creating directory: \(error.localizedDescription)")
+            return
+        }
+    }
+
+    // Create and write to the .defaultsources file
+    let defaultSourcesContent = "Heyyy :3"
+
+    do {
+        try defaultSourcesContent.write(toFile: filePath, atomically: true, encoding: .utf8)
+        print("Successfully wrote to .defaultsources file.")
+    } catch {
+        print("Error writing to .defaultsources file: \(error.localizedDescription)")
+    }
+}
+
+func doesDefaultSourcesFileExist() -> Bool {
+    let fileManager = FileManager.default
+    let filePath = "/private/var/mobile/.TrollApps/.defaultsources"
+
+    if fileManager.fileExists(atPath: filePath) {
+        print(".defaultsources file exists.")
+        return true
+    } else {
+        print(".defaultsources file does not exist.")
+        return false
+    }
+}
+
+func deleteDefaultSourcesFile() -> Bool {
+    let fileManager = FileManager.default
+    let filePath = "/private/var/mobile/.TrollApps/.defaultsources"
+    
+    do {
+        try fileManager.removeItem(atPath: filePath)
+        print(".defaultsources file deleted successfully.")
+        return true
+    } catch {
+        print("Error deleting .defaultsources file: \(error.localizedDescription)")
+        return false
     }
 }

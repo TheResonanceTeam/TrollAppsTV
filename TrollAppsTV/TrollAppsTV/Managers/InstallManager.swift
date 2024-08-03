@@ -9,8 +9,8 @@
 import Combine
 import SwiftUI
 
-func InstallIPA() {
-    @State var showingAlert = false
+func InstallIPA(isTrollAppsUpdate: Bool) {
+    //@State var showingAlert = false
     
     print("INSTALL PROCESS STARTED")
         
@@ -26,6 +26,10 @@ func InstallIPA() {
     } else if let trollStoreApp = findTrollStoreApp() {
         let trollstoreHelperPath = trollStoreApp + "/trollstorehelper"
         let returnCode = spawnRoot(trollstoreHelperPath, ["install", IPAPathURL.path])
+        
+        if(isTrollAppsUpdate) {
+            closeTrollApps()
+        }
         
         if(returnCode != 0) {
             //completion(FunctionStatus(error: true, message: ErrorMessage(title: "FAILED_TO_INSTALL", body: "INSTALLATION_RETURNED_ERROR \(returnCode)")))

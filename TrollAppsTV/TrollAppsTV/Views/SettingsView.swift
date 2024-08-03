@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject var viewModel: SourcesViewModel
+    @State private var showingAlert = false
     
     var body: some View {
         VStack {
@@ -47,20 +47,31 @@ struct SettingsView: View {
             }
             
             //  reset default sources incase user accidentally deletes them
-            Button() {
-                viewModel.setDefaultSources()
-            } label: {
+            Button(action: {
+                if deleteDefaultSourcesFile() {
+                    print("resetting default sources")
+                    showingAlert = true
+                }
+            }) {
                 Image(systemName: "wrench")
                 Text("Reset default sources")
             }
-            
+            .alert(isPresented: $showingAlert) {
+                Alert(
+                    title: Text("Reset Default Sources"),
+                    message: Text("Default sources have been reset. The app will now close."),
+                    dismissButton: .default(Text("Okay")) {
+                        closeTrollApps()
+                    }
+                )
+            }
         }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(viewModel: SourcesViewModel())
+        SettingsView()
     }
 }
 
