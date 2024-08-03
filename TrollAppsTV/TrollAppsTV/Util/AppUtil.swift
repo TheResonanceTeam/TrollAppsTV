@@ -91,27 +91,20 @@ func clearTrollAppsFolder() {
 }
 
 func findAndSetTrollAppsTVVersion(version: String) {
-    let applicationDir = "/private/var/containers/Bundle/Application/"
+    let versionFilePath = "/private/var/mobile/.TrollApps/.currentversion"
     let fileManager = FileManager.default
     
     do {
-        let folders = try fileManager.contentsOfDirectory(atPath: applicationDir)
-        for folder in folders {
-            let appPath = applicationDir + folder + "/TrollAppsTV.app"
-            if fileManager.fileExists(atPath: appPath) {
-                let versionFilePath = appPath + "/.currentversion"
-                do {
-                    try version.write(toFile: versionFilePath, atomically: true, encoding: .utf8)
-                    print("Successfully wrote version \(version) to .currentversion file.")
-                } catch {
-                    print("Error writing to .currentversion file: \(error.localizedDescription)")
-                }
-                return
-            }
+        // Ensure the directory exists
+        if !fileManager.fileExists(atPath: "/private/var/mobile/.TrollApps/") {
+            try fileManager.createDirectory(atPath: "/private/var/mobile/.TrollApps/", withIntermediateDirectories: true, attributes: nil)
         }
-        print("TrollAppsTV.app not found.")
+        
+        // Write the version to the file
+        try version.write(toFile: versionFilePath, atomically: true, encoding: .utf8)
+        print("Successfully wrote version \(version) to .currentversion file.")
     } catch {
-        print("Error reading contents of application directory: \(error)")
+        print("Error writing to .currentversion file: \(error.localizedDescription)")
     }
 }
 
@@ -186,13 +179,16 @@ func isVersion(_ version1: String, greaterThanOrEqualTo version2: String) -> Boo
 }
 
 func updateTrollApps(for app: TrollAppsTV.App) {
-    let versionToDownload = app.versions.first
-    let downloadURL = versionToDownload?.downloadURL
-
-    if let downloadURL = downloadURL,
-        let url = URL(string: downloadURL.replacingOccurrences(of: "apple-magnifier://install?url=", with: "")),
-        UIApplication.shared.canOpenURL(url) {
-            
+    guard let versionToDownload = app.versions.first else {
+        print("No version to download.")
+        return
+    }
+    
+    let downloadURL = versionToDownload.downloadURL
+    let magnifierURLString = "apple-magnifier://install?url=" + downloadURL
+    if let url = URL(string: magnifierURLString),
+       UIApplication.shared.canOpenURL(url) {
+        
         DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
             UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
@@ -200,5 +196,7 @@ func updateTrollApps(for app: TrollAppsTV.App) {
                 exit(0)
             }
         })
+    } else {
+        print("Failed to create URL or cannot open URL.")
     }
 }

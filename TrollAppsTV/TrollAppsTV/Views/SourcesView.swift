@@ -57,23 +57,24 @@ struct SourcesView: View {
                                         }
                                     }
                                 }
-                                Spacer()
-                                if #available(tvOS 15.0, *) {
-                                    Button(role: .destructive) {
-                                        if let index = viewModel.repositories.firstIndex(where: { $0.id == repository.id }) {
-                                            viewModel.removeSource(at: index)
+                                .contextMenu {
+                                    if #available(tvOS 15.0, *) {
+                                        Button(role: .destructive) {
+                                            if let index = viewModel.repositories.firstIndex(where: { $0.id == repository.id }) {
+                                                viewModel.removeSource(at: index)
+                                            }
+                                        } label: {
+                                            Label("Delete", systemImage: "trash")
                                         }
-                                    } label: {
-                                        Image(systemName: "trash")
-                                    }
-                                } else {
-                                    Button() {
-                                        if let index = viewModel.repositories.firstIndex(where: { $0.id == repository.id }) {
-                                            viewModel.removeSource(at: index)
+                                    } else {
+                                        Button() {
+                                            if let index = viewModel.repositories.firstIndex(where: { $0.id == repository.id }) {
+                                                viewModel.removeSource(at: index)
+                                            }
+                                        } label: {
+                                            Label("Delete", systemImage: "trash")
+                                                .foregroundColor(.red)
                                         }
-                                    } label: {
-                                        Image(systemName: "trash")
-                                            .foregroundColor(.red)
                                     }
                                 }
                             }
@@ -103,6 +104,7 @@ struct SourcesView: View {
         }
     }
 }
+
 struct SourcesView_Previews: PreviewProvider {
     static var previews: some View {
         SourcesView()
