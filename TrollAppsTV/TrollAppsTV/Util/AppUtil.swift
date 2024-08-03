@@ -48,6 +48,10 @@ func findAndSetTrollAppsTVVersion(version: String) {
             try fileManager.createDirectory(atPath: "/private/var/mobile/.TrollApps/", withIntermediateDirectories: true, attributes: nil)
         }
         
+        if fileManager.fileExists(atPath: versionFilePath) {
+            try fileManager.removeItem(at: URL(fileURLWithPath: versionFilePath))
+        }
+        
         // Write the version to the file
         try version.write(toFile: versionFilePath, atomically: true, encoding: .utf8)
         print("Successfully wrote version \(version) to .currentversion file.")

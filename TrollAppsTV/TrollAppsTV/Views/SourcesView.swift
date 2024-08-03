@@ -11,6 +11,7 @@ struct SourcesView: View {
     @StateObject private var viewModel = SourcesViewModel()
     @State private var newURL: String = ""
     @State private var showingAlert = false
+    @State private var isTextFieldFocused = false
     
     var body: some View {
         NavigationView {
@@ -85,7 +86,7 @@ struct SourcesView: View {
                 .navigationTitle("Sources")
                 
                 HStack {
-                    TextField("Enter URL", text: $newURL)
+                    FocusableTextField(text: $newURL, placeholder: "Enter URL", isFocusedBinding: $isTextFieldFocused)
                         .padding()
                         .cornerRadius(8)
                     
@@ -93,6 +94,7 @@ struct SourcesView: View {
                         guard !newURL.isEmpty else { return }
                         viewModel.addSource(url: newURL)
                         newURL = ""
+                        showingAlert = true
                     }) {
                         Image(systemName: "plus.circle")
                         Text("Add URL")

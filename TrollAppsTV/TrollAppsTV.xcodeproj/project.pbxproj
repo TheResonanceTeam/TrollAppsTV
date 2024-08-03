@@ -24,6 +24,7 @@
 		FA7D958D2C5B39E300D380FE /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D958C2C5B39E300D380FE /* AppUtil.swift */; };
 		FAA582282C5AE8A8002DB02E /* CustomAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA582272C5AE8A8002DB02E /* CustomAsyncImage.swift */; };
 		FABD8D1F2C5DA23800082E11 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABD8D1E2C5DA23800082E11 /* CoreServices.framework */; };
+		FABED26A2C5EEEE20056ECBB /* FocusableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABED2692C5EEEE20056ECBB /* FocusableTextField.swift */; };
 		FACEA1392C5882B700CE1F07 /* TrollAppsTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEA1382C5882B700CE1F07 /* TrollAppsTVApp.swift */; };
 		FACEA13B2C5882B700CE1F07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEA13A2C5882B700CE1F07 /* ContentView.swift */; };
 		FACEA13D2C5882B800CE1F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACEA13C2C5882B800CE1F07 /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		FAA582272C5AE8A8002DB02E /* CustomAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAsyncImage.swift; sourceTree = "<group>"; };
 		FABD8D1C2C5D5E3E00082E11 /* CoreServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreServices.h; sourceTree = "<group>"; };
 		FABD8D1E2C5DA23800082E11 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		FABED2692C5EEEE20056ECBB /* FocusableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextField.swift; sourceTree = "<group>"; };
 		FACEA1352C5882B700CE1F07 /* TrollAppsTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrollAppsTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACEA1382C5882B700CE1F07 /* TrollAppsTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrollAppsTVApp.swift; sourceTree = "<group>"; };
 		FACEA13A2C5882B700CE1F07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				FA67AB662C596CEA005FF38D /* CustomVisualEffectBlur.swift */,
 				FAA582272C5AE8A8002DB02E /* CustomAsyncImage.swift */,
+				FABED2692C5EEEE20056ECBB /* FocusableTextField.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				FA41F1132C59259E00A0B643 /* FeaturedView.swift in Sources */,
 				FA67AB722C598E44005FF38D /* TSUtil.m in Sources */,
 				FA41F1192C59260A00A0B643 /* SettingsView.swift in Sources */,
+				FABED26A2C5EEEE20056ECBB /* FocusableTextField.swift in Sources */,
 				FA67AB672C596CEA005FF38D /* CustomVisualEffectBlur.swift in Sources */,
 				FA7D958D2C5B39E300D380FE /* AppUtil.swift in Sources */,
 				FA7D958A2C5B37B900D380FE /* RepositoryManager.swift in Sources */,

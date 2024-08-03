@@ -10,8 +10,6 @@ import Combine
 import SwiftUI
 
 func InstallIPA(isTrollAppsUpdate: Bool) {
-    //@State var showingAlert = false
-    
     print("INSTALL PROCESS STARTED")
         
     let destinationFolderURL = URL(fileURLWithPath: "/private/var/mobile/.TrollApps/tmp/")
@@ -38,15 +36,6 @@ func InstallIPA(isTrollAppsUpdate: Bool) {
         } else {
             NotificationCenter.default.post(name: Notification.Name("ApplicationsChanged"), object: nil)
             PassthroughSubject<Void, Never>().send()
-            
-            print("ATTEMPTING TO SHOW SUCCESS ALERT")
-            
-            /*let successAlert = UIAlertController(title: "App successfully installed", message: "You may need to respring to see it on your home screen..", preferredStyle: .alert)
-            successAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-            NSLog("The \"OK\" alert occured.")
-            }))
-            let window = UIApplication.shared.keyWindow
-            window?.rootViewController?.present(successAlert, animated: true)*/
             
             if FileManager.default.fileExists(atPath: IPAPathURL.path) {
                 do {
