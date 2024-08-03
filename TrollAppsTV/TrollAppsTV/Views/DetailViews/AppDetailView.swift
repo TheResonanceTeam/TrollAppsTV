@@ -97,23 +97,23 @@ struct AppDetailView: View {
                         } else {    //  app IS trollapps
                             if(isNewVersionAvailable(for: app)) {
                                 if #available(tvOS 15.0, *) {
-                                    Button("GET") {
+                                    Button("UPDATE") {
                                         if let firstVersion = app.versions.first {
                                             print("CALLING DOWNLOADIPA AND SHOWING INIT ALERT")
                                             downloadIPA(firstVersion.downloadURL, isTrollAppsUpdate: true)
                                             showingAlert = true
                                         }
                                     }
-                                    .alert("Started download:" + app.name, isPresented: $showingAlert) {
+                                    .alert("TrollApps will close. Please allow up to 20 seconds for the update to be applied.", isPresented: $showingAlert) {
                                         Button("OK", role: .cancel) { }
                                     }
                                     .padding(.leading)
                                 } else {
-                                    Button("GET") {
+                                    Button("UPDATE") {
                                         if let firstVersion = app.versions.first {
                                             print("CALLING DOWNLOADIPA AND SHOWING INIT ALERT")
                                             downloadIPA(firstVersion.downloadURL, isTrollAppsUpdate: true)
-                                            downloadAlertMessage = "Started download: " + app.name
+                                            downloadAlertMessage = "TrollApps will close. Please allow up to 20 seconds for the update to be applied."
                                             showingAlert = true
                                         }
                                     }

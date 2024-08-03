@@ -14,7 +14,7 @@ class SourcesViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init() {
-        if !doesDefaultSourcesFileExist() {
+        if(!doesDefaultSourcesFileExist()) {
             setDefaultSources()
             print("Initialized default sources.")
         }
@@ -34,8 +34,8 @@ class SourcesViewModel: ObservableObject {
     }
 
     func addSource(url: String) {
-        let newSource = Source(url: url)
-        sources.append(newSource)
+        print("Adding source with URL: \(url)")
+        sources.append(Source(url: url))
         fetchRepository(from: url)
     }
     
@@ -60,6 +60,7 @@ class SourcesViewModel: ObservableObject {
                     break
                 }
             }, receiveValue: { [weak self] repository in
+                print("Fetched repository: \(repository.name)")
                 self?.repositories.append(repository)
             })
             .store(in: &cancellables)

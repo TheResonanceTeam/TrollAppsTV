@@ -10,6 +10,7 @@ import SwiftUI
 struct SourcesView: View {
     @StateObject private var viewModel = SourcesViewModel()
     @State private var newURL: String = ""
+    @State private var showingAlert = false
     
     var body: some View {
         NavigationView {
@@ -100,6 +101,9 @@ struct SourcesView: View {
                     }
                 }
                 .padding()
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text("Source Added"), message: Text("The source has been added successfully."), dismissButton: .default(Text("OK")))
+                }
             }
         }
     }

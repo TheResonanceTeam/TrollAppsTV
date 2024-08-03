@@ -20,18 +20,9 @@ private func applicationIconImage() -> Int32 {
 }
 
 func clearTrollAppsFolder() {
-    let trollAppsFolderURL = URL(fileURLWithPath: "/private/var/mobile/.TrollApps/")
     let tempIpaFileURL = URL(fileURLWithPath: "/private/var/mobile/.TrollApps/tmp.install.ipa")
     
     do {
-        // Check and delete the .TrollApps folder
-        if FileManager.default.fileExists(atPath: trollAppsFolderURL.path) {
-            try FileManager.default.removeItem(at: trollAppsFolderURL)
-            print("Successfully deleted .TrollApps folder and its contents.")
-        } else {
-            print(".TrollApps folder does not exist.")
-        }
-        
         // Check and delete the tmp.install.ipa file
         if FileManager.default.fileExists(atPath: tempIpaFileURL.path) {
             try FileManager.default.removeItem(at: tempIpaFileURL)
@@ -41,7 +32,6 @@ func clearTrollAppsFolder() {
         }
         
         //  once more just in case :3
-        try FileManager.default.removeItem(at: trollAppsFolderURL)
         try FileManager.default.removeItem(at: tempIpaFileURL)
     } catch {
         print("Error deleting .TrollApps folder or tmp.install.ipa file: \(error.localizedDescription)")
@@ -183,7 +173,6 @@ func createDefaultSourcesFile() {
             return
         }
     }
-
     // Create and write to the .defaultsources file
     let defaultSourcesContent = "Heyyy :3"
 
