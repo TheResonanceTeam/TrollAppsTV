@@ -13,15 +13,27 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(footer: Text("Respringing your device may help if an app isn't appearing on your home screen right away.")) {
+                Section(footer: Text("Reset default sources if you deleted the original sources provided by TrollApps and wish to get them back.")) {
                     Button(action: {
-                        Respring()
+                        if deleteDefaultSourcesFile() {
+                            print("resetting default sources")
+                            showingAlert = true
+                        }
                     }) {
                         HStack {
-                            Image(systemName: "progress.indicator")
-                            Text("Respring Device")
+                            Image(systemName: "wrench")
+                            Text("Reset Default Sources")
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .alert(isPresented: $showingAlert) {
+                        Alert(
+                            title: Text("Reset Default Sources"),
+                            message: Text("Default sources have been reset. The app will now close."),
+                            dismissButton: .default(Text("Okay")) {
+                                closeTrollApps()
+                            }
+                        )
                     }
                 }
                 
@@ -49,27 +61,27 @@ struct SettingsView: View {
                     }
                 }
                 
-                Section(footer: Text("Reset default sources if you deleted the original sources provided by TrollApps and wish to get them back.")) {
-                    Button(action: {
-                        if deleteDefaultSourcesFile() {
-                            print("resetting default sources")
-                            showingAlert = true
-                        }
-                    }) {
-                        HStack {
-                            Image(systemName: "wrench")
-                            Text("Reset Default Sources")
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    .alert(isPresented: $showingAlert) {
-                        Alert(
-                            title: Text("Reset Default Sources"),
-                            message: Text("Default sources have been reset. The app will now close."),
-                            dismissButton: .default(Text("Okay")) {
-                                closeTrollApps()
+                Section(footer: Text("Respringing your device may help if an app isn't appearing on your home screen right away.")) {
+                    if #available(tvOS 18.0, *) {
+                        Button(action: {
+                            Respring()
+                        }) {
+                            HStack {
+                                Image(systemName: "progress.indicator")
+                                Text("Respring Device")
                             }
-                        )
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                    } else {
+                        Button(action: {
+                            Respring()
+                        }) {
+                            HStack {
+                                Image(systemName: "arrow.clockwise")
+                                Text("Respring Device")
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
                     }
                 }
             }

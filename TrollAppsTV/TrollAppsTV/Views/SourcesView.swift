@@ -86,13 +86,14 @@ struct SourcesView: View {
                 .navigationTitle("Sources")
                 
                 HStack {
-                    FocusableTextField(text: $newURL, placeholder: "Enter URL", isFocusedBinding: $isTextFieldFocused)
+                    TextField("Enter URL", text: $newURL)
                         .padding()
                         .cornerRadius(8)
-                    
+
                     Button(action: {
                         guard !newURL.isEmpty else { return }
-                        viewModel.addSource(url: newURL)
+                        saveNewSourceToFile(newUrl: newURL)
+                        viewModel.loadSourcesFromFile()
                         newURL = ""
                         showingAlert = true
                     }) {
@@ -107,6 +108,16 @@ struct SourcesView: View {
                     Alert(title: Text("Source Added"), message: Text("The source has been added successfully."), dismissButton: .default(Text("OK")))
                 }
             }
+        }
+    }
+    private func saveNewSourceToFile(newUrl: String) {
+        let userSourcesFilePath = "/private/var/mobile/.TrollApps/.userSources"
+        var currentContents = (try? String(contentsOfFile: userSourcesFilePath)) ?? ""
+        currentContents += "\(newUrl)\n"
+        do {
+            try currentContents.write(toFile: userSourcesFilePath, atomically: true, encoding: .utf8)
+        } catch {
+            print("Error saving new source to file: \(error)")
         }
     }
 }

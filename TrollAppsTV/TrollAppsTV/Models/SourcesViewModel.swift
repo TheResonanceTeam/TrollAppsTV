@@ -87,6 +87,10 @@ class SourcesViewModel: ObservableObject {
             return
         }
         
+        //  make absolutely sure we don't add any duplicates, and that we remove any deleted repos before reloading
+        repositories.removeAll()
+        loadedRepositoryURLs.removeAll()
+        
         let urls = fileContents.split(separator: "\n").map { String($0) }
         sources = urls.map { Source(url: $0) }
         
