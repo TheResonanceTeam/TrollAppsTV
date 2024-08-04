@@ -80,7 +80,7 @@ class SourcesViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    private func loadSourcesFromFile() {
+    func loadSourcesFromFile() {
         guard FileManager.default.fileExists(atPath: userSourcesFilePath),
               let fileContents = try? String(contentsOfFile: userSourcesFilePath) else {
             print("Could not read sources file")
